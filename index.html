@@ -4,90 +4,419 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ainoor Trading - Premium Indonesian Commodities</title>
+    <link rel="icon" type="image/png" href="logo-ainoor.png">
+    
+    <style>
+        /* --- Base & Desktop Styles --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #0f172a;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-brand {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        header {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 12px 28px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .about-section {
+            padding: 80px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .about-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .about-container h2 {
+            color: #111827;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .about-container p {
+            color: #4b5563;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .about-btn {
+            display: inline-block;
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .products-section {
+            background-image: url('hijau-laut.png');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+        }
+
+        .products-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .products-container h2 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            font-weight: bold;
+        }
+
+        .products-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .product-row-left {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .product-row-right {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .product-card-link {
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .product-card img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .product-card h3 {
+            color: #111827;
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .product-card .tag {
+            color: #1d4ed8;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin:-5px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-container h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .footer-container .desc {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin: 0 0 25px 0;
+        }
+
+        .email-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 35px;
+        }
+
+        .email-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 1.05rem;
+        }
+
+        .follow-section .title {
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #334155;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* --- Mobile Responsive Rules (Layar HP) --- */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+
+            .about-container h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-container p {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .products-container h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .product-row-left, .product-row-right {
+                justify-content: center;
+            }
+
+            .product-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .product-card img {
+                width: 100px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; color: #334155;">
+<body>
 
     <!-- 1. Sticky Navigation Bar -->
-    <nav style="position: sticky; top: 0; z-index: 1000; background-color: #0f172a; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center;">
-        <div style="color: #ffffff; font-weight: bold; font-size: 1.25rem;">Ainoor Trading</div>
-        <div style="display: flex; gap: 20px;">
-            <a href="#about" style="color: #ffffff; text-decoration: none; font-size: 0.95rem;">About Us</a>
-            <a href="#products" style="color: #ffffff; text-decoration: none; font-size: 0.95rem;">Our Products</a>
-            <a href="#contact" style="color: #ffffff; text-decoration: none; font-size: 0.95rem;">Contact</a>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">Ainoor Trading</div>
+            <div class="nav-links">
+                <a href="#about">About Us</a>
+                <a href="#products">Our Products</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
     </nav>
 
     <!-- 2. Hero Section -->
-    <header style="background-color: #0f172a; color: #ffffff; padding: 80px 20px; text-align: center;">
-        <h1 style="font-size: 3rem; margin-bottom: 15px; font-weight: bold;">Empowering Communities, Delivering Quality</h1>
-        <p style="font-size: 1.25rem; color: #94a3b8; max-width: 600px; margin: 0 auto 30px;">Bridging Local Indonesian Farmers and Fishermen to the Global Market with Uncompromising Quality.</p>
-        <a href="#products" style="display: inline-block; background-color: #2563eb; color: #ffffff; padding: 12px 28px; font-weight: bold; text-decoration: none; border-radius: 6px;">View Our Products</a>
+    <header>
+        <h1>Empowering Communities, Delivering Quality</h1>
+        <p>Bridging Local Indonesian Farmers and Fishermen to the Global Market with Uncompromising Quality.</p>
+        <a href="#products" class="hero-btn">View Our Products</a>
     </header>
 
     <!-- 3. About Us Section -->
-    <section id="about" style="padding: 80px 20px; background-color: #ffffff; text-align: center;">
-        <div class="container" style="max-width: 850px; margin: 0 auto;">
-            
-            <h2 style="color: #111827; font-size: 2.5rem; font-weight: bold; margin-bottom: 25px;">About Ainoor Trading</h2>
-            
-            <p style="color: #4b5563; font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; text-align: justify;">
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2>About Ainoor Trading</h2>
+            <p>
                 Our journey began with a single vision: to showcase the hidden wealth of Indonesia's seas through the finest seaweed. <strong>Ainoor Trading</strong> was founded on the shores of local coastal communities, establishing a direct bridge from well-organized networks of traditional fishermen to the global market. Every single strand of our seaweed is meticulously hand-harvested, sun-dried, and chosen with care by coastal families who have mastered this craft for generations.
             </p>
-            
-            <p style="color: #4b5563; font-size: 1.15rem; line-height: 1.8; margin-bottom: 35px; text-align: justify;">
+            <p>
                 By accommodating and empowering these local fishermen, we don't just secure premium-grade raw materials; we also build an ethical, sustainable supply chain. We manage the entire process—serving as a trusted international marketing powerhouse and maintaining a strict, multi-tier Quality Control (QC) system right at the source. Partnering with us means securing consistency and premium quality, while directly fostering sustainable livelihoods and marine conservation in Indonesia. Let’s grow a sustainable future together!
             </p>
-            
-            <a href="company-profile.html" style="display: inline-block; background-color: #0f172a; color: #ffffff; padding: 14px 30px; font-size: 1rem; font-weight: bold; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease, transform 0.2s ease;">
+            <a href="company-profile.html" class="about-btn">
                 Learn More About Our Impact & Our Team →
             </a>
-
         </div>
     </section>
 
-    <!-- 4. Our Products Section (Tata Letak Kiri-Kanan-Kiri) -->
-    <section id="products" style="background-image: url('hijau-laut.png'); background-size: cover; background-position: center; padding: 80px 20px;">
-        <div class="container" style="max-width: 1000px; margin: 0 auto;">
-            
-            <h2 style="color: #ffffff; font-size: 2.5rem; text-align: center; margin-bottom: 50px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); font-weight: bold;">Our Premium Products</h2>
-            
-            <div class="products-list" style="display: flex; flex-direction: column; gap: 40px;">
+    <!-- 4. Our Products Section -->
+    <section id="products" class="products-section">
+        <div class="products-container">
+            <h2>Our Premium Products</h2>
+            <div class="products-list">
                 
-                <!-- 1. Eucheuma Cottonii (Rata Kiri) -->
-                <div style="display: flex; justify-content: flex-start; width: 100%;">
-                    <a href="seaweed.html" style="text-decoration: none; color: inherit;">
-                        <div class="product-card" style="background-color: #ffffff; padding: 30px; border-radius: 12px; width: 100%; max-width: 550px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; display: flex; align-items: center; gap: 25px; text-align: left; cursor: pointer;">
-                            <img src="nori cottonii.jpg" alt="Eucheuma Cottonii" style="width: 120px; height: auto; border-radius: 8px; flex-shrink: 0;">
+                <!-- 1. Eucheuma Cottonii (Kiri) -->
+                <div class="product-row-left">
+                    <a href="seaweed.html" class="product-card-link">
+                        <div class="product-card">
+                            <img src="produk-rumputlaut.png" alt="Eucheuma Cottonii">
                             <div>
-                                <h3 style="color: #111827; font-size: 1.5rem; margin-bottom: 10px; font-weight: bold;">Eucheuma Cottonii (Food Grade)</h3>
-                                <p style="color: #4b5563; font-size: 0.95rem; line-height: 1.6; margin: 0;">Premium sun-dried seaweed, meticulously cleaned for food manufacturing. Ideal as a high-yield raw material for carrageenan extraction, organic texturizers, and healthy seaweed snack products like premium nori sheets.</p>
+                                <h3>Eucheuma Cottonii (Food Grade)</h3>
+                                <p>Premium sun-dried seaweed, meticulously cleaned for food manufacturing. Ideal as a high-yield raw material for carrageenan extraction, organic texturizers, and healthy seaweed snack products like premium nori sheets.</p>
                             </div>
                         </div>
                     </a>
                 </div>
 
-                <!-- 2. Liquid Organic Fertilizer (Rata Kanan) -->
-                <div style="display: flex; justify-content: flex-end; width: 100%;">
-                    <a href="sea-products.html" style="text-decoration: none; color: inherit;">
-                        <div class="product-card" style="background-color: #ffffff; padding: 30px; border-radius: 12px; width: 100%; max-width: 550px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; display: flex; align-items: center; gap: 25px; text-align: left; cursor: pointer;">
-                            <img src="POC cottonii.jpg" alt="Liquid Organic Fertilizer" style="width: 120px; height: auto; border-radius: 8px; flex-shrink: 0;">
+                <!-- 2. Liquid Organic Fertilizer (Kanan) -->
+                <div class="product-row-right">
+                    <a href="sea-products.html" class="product-card-link">
+                        <div class="product-card">
+                            <img src="produk-pupuk.png" alt="Liquid Organic Fertilizer">
                             <div>
-                                <h3 style="color: #111827; font-size: 1.5rem; margin-bottom: 10px; font-weight: bold;">Liquid Organic Fertilizer</h3>
-                                <p style="color: #1d4ed8; font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px;">Eucheuma Cottonii Based</p>
-                                <p style="color: #4b5563; font-size: 0.95rem; line-height: 1.6; margin: 0;">An eco-friendly bio-stimulant formulated entirely from nutrient-rich seaweed extract. It boosts crop resilience, enhances soil health, and accelerates root growth, making it a sustainable choice for modern organic farming.</p>
+                                <h3>Liquid Organic Fertilizer</h3>
+                                <div class="tag">Eucheuma Cottonii Based</div>
+                                <p>An eco-friendly bio-stimulant formulated entirely from nutrient-rich seaweed extract. It boosts crop resilience, enhances soil health, and accelerates root growth, making it a sustainable choice for modern organic farming.</p>
                             </div>
                         </div>
                     </a>
                 </div>
 
-                <!-- 3. Premium Sea Salt (Rata Kiri) -->
-                <div style="display: flex; justify-content: flex-start; width: 100%;">
-                    <a href="coconut.html" style="text-decoration: none; color: inherit;">
-                        <div class="product-card" style="background-color: #ffffff; padding: 30px; border-radius: 12px; width: 100%; max-width: 550px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; display: flex; align-items: center; gap: 25px; text-align: left; cursor: pointer;">
-                            <img src="sea salt cottonii.jpg" alt="Premium Sea Salt" style="width: 120px; height: auto; border-radius: 8px; flex-shrink: 0;">
+                <!-- 3. Premium Sea Salt (Kiri) -->
+                <div class="product-row-left">
+                    <a href="coconut.html" class="product-card-link">
+                        <div class="product-card">
+                            <img src="produk-garam.png" alt="Premium Sea Salt">
                             <div>
-                                <h3 style="color: #111827; font-size: 1.5rem; margin-bottom: 10px; font-weight: bold;">Premium Sea Salt</h3>
-                                <p style="color: #4b5563; font-size: 0.95rem; line-height: 1.6; margin: 0;">Handcrafted artisanal sea salt crystallized from pristine waters. Infused and naturally enriched with the pure essence of Eucheuma cottonii to deliver extra trace minerals, unparalleled culinary depth, and clean organic wellness.</p>
+                                <h3>Premium Sea Salt</h3>
+                                <p>Handcrafted artisanal sea salt crystallized from pristine waters. Infused and naturally enriched with the pure essence of Eucheuma cottonii to deliver extra trace minerals, unparalleled culinary depth, and clean organic wellness.</p>
                             </div>
                         </div>
                     </a>
@@ -98,41 +427,36 @@
     </section>
 
     <!-- 5. Footer & Business Enquiries Section -->
-    <footer id="contact" style="background-color: #0f172a; color: #ffffff; padding: 60px 20px; text-align: center;">
-        <div class="container" style="max-width: 600px; margin: 0 auto;">
+    <footer id="contact">
+        <div class="footer-container">
+            <h2>Business Enquiries</h2>
+            <p class="desc">For official proposals, bulk orders, or global trade partnerships, please reach out to us directly via email.</p>
             
-            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 10px;">Business Enquiries</h2>
-            <p style="color: #94a3b8; font-size: 1rem; margin-bottom: 25px;">For official proposals, bulk orders, or global trade partnerships, please reach out to us directly via email.</p>
-            
-            <!-- Email Action Button (Utama) -->
-            <div style="display: flex; justify-content: center; margin-bottom: 35px;">
-                <a href="mailto:info@ainoortrading.com" style="display: flex; align-items: center; gap: 12px; background-color: #2563eb; color: #ffffff; padding: 14px 32px; border-radius: 8px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 1.05rem;">
+            <!-- Tombol Email Utama -->
+            <div class="email-box">
+                <a href="mailto:info@ainoortrading.com" class="email-btn">
                     <span>✉️</span> Contact Our Team via Email
                 </a>
             </div>
 
-            <!-- Follow More Section (Sosial Media & Chat) -->
-            <div style="margin-bottom: 40px;">
-                <p style="color: #64748b; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Follow More</p>
-                <div style="display: flex; justify-content: center; gap: 25px; align-items: center;">
-                    <!-- WhatsApp -->
-                    <a href="https://wa.me/62xxxxxxxxxxx" target="_blank" style="color: #94a3b8; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+            <!-- Bagian Follow More -->
+            <div class="follow-section">
+                <p class="title">Follow More</p>
+                <div class="social-links">
+                    <a href="https://wa.me/62xxxxxxxxxxx" target="_blank">
                         <span style="color: #16a34a; font-size: 1.2rem;">💬</span> WhatsApp
                     </a>
-                    <!-- Instagram -->
-                    <a href="https://instagram.com/ainoor.trading" target="_blank" style="color: #94a3b8; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                    <a href="https://instagram.com/ainoor.trading" target="_blank">
                         <span style="color: #db2777; font-size: 1.2rem;">📸</span> Instagram
                     </a>
-                    <!-- Facebook -->
-                    <a href="https://facebook.com/ainoor.trading" target="_blank" style="color: #94a3b8; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                    <a href="https://facebook.com/ainoor.trading" target="_blank">
                         <span style="color: #3b82f6; font-size: 1.2rem;">👥</span> Facebook
                     </a>
                 </div>
             </div>
             
-            <hr style="border: 0; border-top: 1px solid #334155; margin-bottom: 20px;">
-            <p style="color: #64748b; font-size: 0.85rem; margin: 0;">&copy; 2026 Ainoor Trading. Based in Makassar, Indonesia. All Rights Reserved.</p>
-            
+            <hr>
+            <p class="copyright">&copy; 2026 Ainoor Trading. Based in Makassar, Indonesia. All Rights Reserved.</p>
         </div>
     </footer>
 
