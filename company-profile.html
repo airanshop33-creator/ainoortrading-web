@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Impact & Story - Ainoor Trading</title>
+    <link rel="icon" type="image/png" href="logo-ainoor.png">
+    
+    <style>
+        /* --- Base Styles --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #0f172a;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-brand {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        /* --- Hero Section --- */
+        .profile-hero {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .profile-hero h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .profile-hero p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Content Layout --- */
+        .main-content {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            color: #111827;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2563eb;
+            padding-left: 15px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #4b5563;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* --- Media Showcase Grid (Founder & Team Layout) --- */
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .media-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        /* Jalur alternatif jika gambar sudah dimasukkan */
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .media-caption {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .media-caption h3 {
+            margin: 0 0 5px 0;
+            color: #111827;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .media-caption p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #64748b;
+            text-align: center;
+        }
+
+        /* --- Impact Stats Section --- */
+        .stats-box {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .stat-item h4 {
+            font-size: 2rem;
+            color: #3b82f6;
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+
+        .stat-item p {
+            color: #94a3b8;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .profile-hero h1 {
+                font-size: 2rem;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .image-placeholder {
+                height: 250px;
+            }
+
+            .stats-box {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Ainoor Trading</a>
+            <div class="nav-links">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <div class="profile-hero">
+        <h1>About Us & Our Impact</h1>
+        <p>Discover the driving force behind our ethical supply chain and our dedication to coastal communities.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <a href="index.html" class="back-link">← Return to Homepage</a>
+
+        <h2>Our Story</h2>
+        <p>
+            Ainoor Trading was established with a clear corporate vision: to systematically bridge the gap between premium raw seaweed commodities and the highly demanding international manufacturing ecosystem. Headquartered strategically in Makassar, South Sulawesi—the maritime heart of Indonesia's seaweed production—we have transformed standard localized sourcing into an interconnected, commercial-grade value chain.
+        </p>
+        <p>
+            By coordinating directly with independent local fisherman unions, we remove complex intermediary layers, ensuring absolute traceability right from the extraction zone. This proximity allows us to secure superior batches of raw material while maintaining rigid standardizations for international buyers.
+        </p>
+
+        <!-- Media Grid: Founder & Farmer Team Spaces -->
+        <div class="media-grid">
+            
+            <!-- Space 1: Foto Founder -->
+            <div class="media-card">
+                <div class="image-placeholder">
+                    <span>[ Space: Foto Founder ]</span>
+                    <!-- Silahkan masukkan file gambar founder di sini jika sudah ada: -->
+                    <!-- <img src="founder-ainoor.jpg" alt="Founder of Ainoor Trading"> -->
+                </div>
+                <div class="media-caption">
+                    <h3>The Founder</h3>
+                    <p>Driving commercial strategies and global trade partnerships from Makassar.</p>
+                </div>
+            </div>
+
+            <!-- Space 2: Foto Tim Petani -->
+            <div class="media-card">
+                <div class="image-placeholder">
+                    <span>[ Space: Foto Tim Petani ]</span>
+                    <!-- Silahkan masukkan file gambar tim petani di sini jika sudah ada: -->
+                    <!-- <img src="tim-petani.jpg" alt="Ainoor Sourcing Team & Local Fishermen"> -->
+                </div>
+                <div class="media-caption">
+                    <h3>Our Sourcing Team</h3>
+                    <p>Local fishermen and coastal families harvesting premium sea commodities.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>Sustainable Socio-Economic Impact</h2>
+        <p>
+            Sustainability is embedded directly into our business model rather than treated as a corporate afterthought. We operate an inclusive operational framework that guarantees fair trade practices, offering stable price baselines directly to traditional seaweed farming families. This economic insulation helps local communities weather seasonal market fluctuations securely.
+        </p>
+        <p>
+            Furthermore, our sourcing operations actively incentivize responsible, eco-friendly hand-harvesting techniques that protect the delicate coral reef architecture of Indonesian waters. Through this structured approach, we ensure that the expansion of global trading networks directly funds the economic development and ecological preservation of our coastal origins.
+        </p>
+
+        <!-- Impact Metrics Box -->
+        <div class="stats-box">
+            <div class="stat-item">
+                <h4>100%</h4>
+                <p>Traceable Sourcing</p>
+            </div>
+            <div class="stat-item">
+                <h4>Fair Trade</h4>
+                <p>Direct Farmer Benefits</p>
+            </div>
+            <div class="stat-item">
+                <h4>Premium</h4>
+                <p>Quality Standard</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Ainoor Trading. Based in Makassar, Indonesia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
