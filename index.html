@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ainoor Trading - Premium Indonesian Commodities</title>
+    <title>Ainoor Trading - Premium Seaweed & Marine Commodities</title>
     <link rel="icon" type="image/png" href="logo-ainoor.png">
     
     <style>
-        /* --- Base & Desktop Styles --- */
-        body {
+        /* --- Base & Reset Styles --- */
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8fafc;
             color: #334155;
+            line-height: 1.6;
         }
-        
+
+        /* --- Navigation Bar --- */
         nav {
             position: sticky;
             top: 0;
@@ -35,7 +42,9 @@
         .nav-brand {
             color: #ffffff;
             font-weight: bold;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
+            text-decoration: none;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
@@ -44,415 +53,387 @@
         }
 
         .nav-links a {
-            color: #ffffff;
+            color: #94a3b8;
             text-decoration: none;
             font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
 
-        header {
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
             background-color: #0f172a;
             color: #ffffff;
             padding: 80px 20px;
             text-align: center;
         }
 
-        header h1 {
-            font-size: 3rem;
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
             margin-bottom: 15px;
-            font-weight: bold;
+            font-weight: 800;
+            line-height: 1.2;
         }
 
-        header p {
-            font-size: 1.25rem;
+        .hero p {
             color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
 
-        .hero-btn {
+        .btn-primary {
             display: inline-block;
             background-color: #2563eb;
             color: #ffffff;
             padding: 12px 28px;
-            font-weight: bold;
-            text-decoration: none;
             border-radius: 6px;
-        }
-
-        .about-section {
-            padding: 80px 20px;
-            background-color: #ffffff;
-            text-align: center;
-        }
-
-        .about-container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .about-container h2 {
-            color: #111827;
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 25px;
-        }
-
-        .about-container p {
-            color: #4b5563;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .about-btn {
-            display: inline-block;
-            background-color: #0f172a;
-            color: #ffffff;
-            padding: 14px 30px;
-            font-size: 1rem;
-            font-weight: bold;
             text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            transition: background-color 0.2s ease;
         }
 
-        .products-section {
-            background-image: url('hijau-laut.png');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 20px;
+        .btn-primary:hover {
+            background-color: #1d4ed8;
         }
 
-        .products-container {
-            max-width: 1000px;
-            margin: 0 auto;
+        /* --- Main Layout Container --- */
+        .main-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
-        .products-container h2 {
-            color: #ffffff;
-            font-size: 2.5rem;
+        .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            font-weight: bold;
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 40px;
+            font-weight: 700;
         }
 
-        .products-list {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .product-row-left {
-            display: flex;
-            justify-content: flex-start;
-            width: 100%;
-        }
-
-        .product-row-right {
-            display: flex;
-            justify-content: flex-end;
-            width: 100%;
-        }
-
-        .product-card-link {
-            text-decoration: none;
-            color: inherit;
-            width: 100%;
-            max-width: 550px;
+        /* --- Products Grid --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
         }
 
         .product-card {
             background-color: #ffffff;
-            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
             display: flex;
-            align-items: center;
-            gap: 25px;
-            text-align: left;
-            cursor: pointer;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .product-card img {
-            width: 120px;
-            height: auto;
-            border-radius: 8px;
-            flex-shrink: 0;
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .product-card h3 {
-            color: #111827;
-            font-size: 1.5rem;
-            margin: 0 0 10px 0;
-            font-weight: bold;
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #cbd5e1;
         }
 
-        .product-card .tag {
-            color: #1d4ed8;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin:-5px 0 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .product-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
-        .product-card p {
-            color: #4b5563;
+        .product-content h3 {
+            font-size: 1.3rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .product-content p {
+            color: #64748b;
             font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
-        footer {
+        .btn-secondary {
+            display: block;
+            text-align: center;
+            background-color: #f1f5f9;
+            color: #0f172a;
+            padding: 10px 0;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
             background-color: #0f172a;
             color: #ffffff;
-            padding: 60px 20px;
-            text-align: center;
         }
 
-        .footer-container {
-            max-width: 600px;
+        /* --- About Section --- */
+        .about-section {
+            background-color: #ffffff;
+            padding: 50px 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 80px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .footer-container h2 {
+        .about-container h2 {
             font-size: 2rem;
-            font-weight: bold;
-            margin: 0 0 10px 0;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .about-container p {
+            color: #475569;
+            font-size: 1.05rem;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .btn-about-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .btn-about-link:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer & Contact Section --- */
+        footer {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 60px 20px 30px 20px;
+        }
+
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
         }
 
         .footer-container .desc {
             color: #94a3b8;
-            font-size: 1rem;
-            margin: 0 0 25px 0;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
         }
 
-        .email-box {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 35px;
-        }
-
-        .email-btn {
-            display: flex;
+        .btn-email-official {
+            display: inline-flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 10px;
             background-color: #2563eb;
             color: #ffffff;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 6px;
             text-decoration: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            font-size: 1.05rem;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            transition: background-color 0.2s ease;
         }
 
-        .follow-section .title {
-            color: #64748b;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
+        .btn-email-official:hover {
+            background-color: #1d4ed8;
         }
 
-        .social-links {
+        .social-order-channels {
             display: flex;
             justify-content: center;
-            gap: 25px;
             align-items: center;
+            gap: 20px;
             margin-bottom: 40px;
-        }
-
-        .social-links a {
-            color: #94a3b8;
-            text-decoration: none;
             font-size: 0.95rem;
-            display: flex;
+            color: #94a3b8;
+        }
+
+        .social-order-channels a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
-        hr {
-            border: 0;
-            border-top: 1px solid #334155;
-            margin-bottom: 20px;
-        }
-
-        .copyright {
+        .copyright-text {
             color: #64748b;
             font-size: 0.85rem;
-            margin: 0;
+            border-top: 1px solid #1e293b;
+            padding-top: 25px;
         }
 
-        /* --- Mobile Responsive Rules (Layar HP) --- */
+        /* --- Mobile Responsive --- */
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-            
-            header h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
-            
-            header p {
-                font-size: 1rem;
+
+            .product-grid {
+                grid-template-columns: 1fr;
             }
 
-            .about-container h2 {
-                font-size: 1.8rem;
-            }
-
-            .about-container p {
-                font-size: 1rem;
-                text-align: left;
-            }
-
-            .products-container h2 {
-                font-size: 1.8rem;
-                margin-bottom: 30px;
-            }
-
-            .product-row-left, .product-row-right {
-                justify-content: center;
-            }
-
-            .product-card {
+            .social-order-channels {
                 flex-direction: column;
-                text-align: center;
-                padding: 20px;
-                gap: 15px;
-            }
-
-            .product-card img {
-                width: 100px;
-            }
-
-            .social-links {
-                flex-direction: column;
-                gap: 15px;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. Sticky Navigation Bar -->
+    <!-- 1. Navigation Bar -->
     <nav>
         <div class="nav-container">
-            <div class="nav-brand">Ainoor Trading</div>
+            <a href="index.html" class="nav-brand">Ainoor Trading</a>
             <div class="nav-links">
+                <a href="#products">Products</a>
                 <a href="#about">About Us</a>
-                <a href="#products">Our Products</a>
+                <a href="company-profile.html">Impact & Story</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- 2. Hero Section -->
-    <header>
-        <h1>Empowering Communities, Delivering Quality</h1>
-        <p>Bridging Local Indonesian Farmers and Fishermen to the Global Market with Uncompromising Quality.</p>
-        <a href="#products" class="hero-btn">View Our Products</a>
+    <header class="hero">
+        <div class="hero-container">
+            <h1>Sustainably Sourced Seaweed Commodities</h1>
+            <p>Exporting raw Eucheuma Cottonii, organic bio-stimulants, and sea salt directly from Makassar to global markets.</p>
+            <a href="#products" class="btn-primary">Explore Products</a>
+        </div>
     </header>
 
-    <!-- 3. About Us Section -->
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <h2>About Ainoor Trading</h2>
-            <p>
-                Our journey began with a single vision: to showcase the hidden wealth of Indonesia's seas through the finest seaweed. <strong>Ainoor Trading</strong> was founded on the shores of local coastal communities, establishing a direct bridge from well-organized networks of traditional fishermen to the global market. Every single strand of our seaweed is meticulously hand-harvested, sun-dried, and chosen with care by coastal families who have mastered this craft for generations.
-            </p>
-            <p>
-                By accommodating and empowering these local fishermen, we don't just secure premium-grade raw materials; we also build an ethical, sustainable supply chain. We manage the entire process—serving as a trusted international marketing powerhouse and maintaining a strict, multi-tier Quality Control (QC) system right at the source. Partnering with us means securing consistency and premium quality, while directly fostering sustainable livelihoods and marine conservation in Indonesia. Let’s grow a sustainable future together!
-            </p>
-            <!-- Baris Legalitas Terverifikasi -->
-            <p style="text-align: center; color: #16a34a; font-weight: bold; font-size: 0.95rem; margin-top: -15px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px;">
-                ✓ Fully Registered & Verified by Ministry of Investment/BKPM Indonesia
-            </p>
-            <a href="company-profile.html" class="about-btn">
-                Learn More About Our Impact & Our Team →
-            </a>
-        </div>
-    </section>
+    <!-- Main Content Grid -->
+    <main class="main-container">
 
-    <!-- 4. Our Products Section -->
-    <section id="products" class="products-section">
-        <div class="products-container">
-            <h2>Our Premium Products</h2>
-            <div class="products-list">
+        <!-- Products Showcase -->
+        <section id="products">
+            <h2 class="section-title">Our Commodities</h2>
+            
+            <div class="product-grid">
                 
-                <!-- 1. Eucheuma Cottonii (Kiri) -->
-                <div class="product-row-left">
-                    <a href="eucheuma-cottonii.html" class="product-card-link">
-                        <div class="product-card">
-                            <img src="nori cottonii.jpg" alt="Eucheuma Cottonii">
-                            <div>
-                                <h3>Eucheuma Cottonii (Food Grade)</h3>
-                                <p>Premium sun-dried seaweed, meticulously cleaned for food manufacturing. Ideal as a high-yield raw material for carrageenan extraction, organic texturizers, and healthy seaweed snack products like premium nori sheets.</p>
-                            </div>
-                        </div>
-                    </a>
+                <!-- Product 1: Eucheuma Cottonii -->
+                <div class="product-card">
+                    <img src="nori cottonii.jpg" alt="Eucheuma Cottonii Seaweed" class="product-img">
+                    <div class="product-content">
+                        <h3>Eucheuma Cottonii</h3>
+                        <p>High-grade raw seaweed for carrageenan processing, food production, and industrial use. Cleaned and moisture-controlled.</p>
+                        <a href="eucheuma-cottonii.html" class="btn-secondary">View Specifications</a>
+                    </div>
                 </div>
 
-                <!-- 2. Liquid Organic Fertilizer (Kanan) -->
-                <div class="product-row-right">
-                    <a href="liquid-organic-fertilizer.html" class="product-card-link">
-                        <div class="product-card">
-                            <img src="POC cottonii.jpg" alt="Liquid Organic Fertilizer">
-                            <div>
-                                <h3>Liquid Organic Fertilizer</h3>
-                                <div class="tag">Eucheuma Cottonii Based</div>
-                                <p>An eco-friendly bio-stimulant formulated entirely from nutrient-rich seaweed extract. It boosts crop resilience, enhances soil health, and accelerates root growth, making it a sustainable choice for modern organic farming.</p>
-                            </div>
-                        </div>
-                    </a>
+                <!-- Product 2: Liquid Organic Fertilizer -->
+                <div class="product-card">
+                    <img src="POC cottonii.jpg" alt="Liquid Organic Fertilizer (POC)" class="product-img">
+                    <div class="product-content">
+                        <h3>Liquid Organic Fertilizer</h3>
+                        <p>Seaweed extract bio-stimulant rich in micro-nutrients to increase crop output, promote root growth, and enhance soil quality.</p>
+                        <a href="liquid-organic-fertilizer.html" class="btn-secondary">View Specifications</a>
+                    </div>
                 </div>
 
-                <!-- 3. Premium Sea Salt (Kiri) -->
-                <div class="product-row-left">
-                    <a href="premium-sea-salt.html" class="product-card-link">
-                        <div class="product-card">
-                            <img src="sea salt cottonii.jpg" alt="Premium Sea Salt">
-                            <div>
-                                <h3>Premium Sea Salt</h3>
-                                <p>Handcrafted artisanal sea salt crystallized from pristine waters. Infused and naturally enriched with the pure essence of Eucheuma cottonii to deliver extra trace minerals, unparalleled culinary depth, and clean organic wellness.</p>
-                            </div>
-                        </div>
-                    </a>
+                <!-- Product 3: Premium Sea Salt -->
+                <div class="product-card">
+                    <img src="sea salt cottonii.jpg" alt="Premium Sea Salt" class="product-img">
+                    <div class="product-content">
+                        <h3>Premium Sea Salt</h3>
+                        <p>Naturally solar-evaporated sea salt sourced from pristine coastal waters. Ideal for industrial, food processing, and preserve applications.</p>
+                        <a href="premium-sea-salt.html" class="btn-secondary">View Specifications</a>
+                    </div>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 5. Footer & Business Enquiries Section -->
+        <!-- 3. About Us Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <h2>About Ainoor Trading</h2>
+                
+                <!-- Status Legalitas BKPM Terverifikasi -->
+                <p style="text-align: center; color: #16a34a; font-weight: bold; font-size: 0.95rem; margin-top: -5px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    ✓ Fully Registered & Verified by Ministry of Investment/BKPM Indonesia
+                </p>
+                
+                <p>
+                    Ainoor Trading is a Makassar-based Indonesian commodity export firm specializing in high-grade sea commodities. By operating directly at the sourcing origin, we build equitable partnerships with coastal farming cooperatives to ensure consistent quality control and uninterrupted supply chains.
+                </p>
+                <p>
+                    From raw dried seaweed to eco-friendly agricultural inputs, we bridge local coastal production with international commercial requirements.
+                </p>
+
+                <a href="company-profile.html" class="btn-about-link">Read full story & social impact →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 4. Footer & Business Enquiries Section -->
     <footer id="contact">
         <div class="footer-container">
             <h2>Business Enquiries</h2>
-            <!-- Penambahan teks arahan detail & legalitas -->
+            
+            <!-- Arahan Chat Detail & Legalitas -->
             <p style="color: #38bdf8; font-weight: 600; font-size: 1.05rem; margin-top: 5px; margin-bottom: 5px;">
                 Chat us for more details and legality
             </p>
-            <p class="desc">For official proposals or global trade partnerships, please reach out to us directly via email.
-            </p>
-            <!-- Tombol Email Utama -->
-            <div class="email-box">
-                <a href="mailto:info@ainoortrading.com" class="email-btn"><span>✉️</span> Contact Our Team via Email</a>
+            
+            <p class="desc">For official proposals, bulk orders, or global trade partnerships, please reach out to us directly via email or message channels.</p>
+
+            <!-- Email resmi baru: ekspor@ainoortrading.com via Gmail Web -->
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ekspor@ainoortrading.com&su=Inquiry:+Product+Details" target="_blank" class="btn-email-official">
+                <span>✉️</span> Send Official Inquiry Email
+            </a>
+
+            <!-- Channel Kontak Tambahan -->
+            <div class="social-order-channels">
+                <span>Direct Chat:</span>
+                <a href="https://wa.me/62xxxxxxxxxxx" target="_blank">
+                    <span style="color: #16a34a;">💬</span> WhatsApp
+                </a>
+                <a href="weixin://dl/chat?username=ainoor_trading">
+                    <span style="color: #07c160;">🟢</span> WeChat
+                </a>
             </div>
 
-            <!-- Bagian Chat & Follow Updates -->
-            <div class="follow-section">
-                <div class="social-links" style="margin-bottom: 15px;"><span style="color: #64748b; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Chat Us:</span> <a href="https://wa.me/6282355515072" target="_blank"><span style="color: #16a34a; font-size: 1.2rem;">💬</span> WhatsApp</a> <a href="weixin://dl/chat?username=ainoor_trading"><span style="color: #07c160; font-size: 1.2rem;">🟢</span> WeChat</a></div>
-                <div class="social-links" style="margin-bottom: 40px;"><span style="color: #64748b; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Follow Our Updates:</span> <a href="https://instagram.com/ainoor.trading" target="_blank"><span style="color: #db2777; font-size: 1.2rem;">📸</span> Instagram</a> <a href="https://facebook.com/ainoor.trading" target="_blank"><span style="color: #3b82f6; font-size: 1.2rem;">👥</span> Facebook</a></div>
-            </div>
-            
-            <hr>
-            <p class="copyright">&copy; 2026 Ainoor Trading. Based in Makassar, Indonesia. All Rights Reserved.</p>
+            <p class="copyright-text">&copy; 2026 Ainoor Trading. Based in Makassar, Indonesia. All Rights Reserved.</p>
         </div>
     </footer>
 
