@@ -49,6 +49,11 @@
             text-decoration: none;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
         .nav-links a {
             color: #94a3b8;
             text-decoration: none;
@@ -93,7 +98,7 @@
         }
 
         /* ==========================================
-           4. PRODUCTS GRID STYLES
+           4. MAIN CONTENT & PRODUCTS STYLES
            ========================================== */
         .main-container {
             max-width: 1100px;
@@ -112,7 +117,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .product-card {
@@ -147,7 +152,38 @@
         }
 
         /* ==========================================
-           5. FOOTER & CONTACT STYLES
+           5. ABOUT US SECTION STYLES
+           ========================================== */
+        .about-section {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-container h2 {
+            font-size: 1.8rem;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .about-container p {
+            color: #475569;
+            font-size: 1rem;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* ==========================================
+           6. FOOTER & CONTACT STYLES
            ========================================== */
         footer {
             background-color: #0f172a;
@@ -209,7 +245,8 @@
         <div class="nav-container">
             <a href="index.html" class="nav-brand">Ainoor Trading</a>
             <div class="nav-links">
-                <a href="#contact">Contact Us</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
@@ -221,40 +258,57 @@
         <span class="verified-badge">✓ Verified Entity by BKPM Indonesia</span>
     </header>
 
-    <!-- KETERANGAN: SECTION KATALOG PRODUK UTAMA -->
     <main class="main-container">
-        <h2 class="section-title">Our Main Products</h2>
         
-        <div class="product-grid">
+        <!-- KETERANGAN: SECTION KATALOG PRODUK UTAMA (TANPA LINK HALAMAN TAMBAHAN) -->
+        <section id="products">
+            <h2 class="section-title">Our Main Products</h2>
             
-            <!-- KETERANGAN: KARTU PRODUK 1 -->
-            <div class="product-card">
-                <img src="nori cottonii.jpg" alt="Eucheuma Cottonii" class="product-img">
-                <div class="product-content">
-                    <h3>Eucheuma Cottonii</h3>
-                    <p>High-grade raw dried seaweed for carrageenan processing, food industry, and commercial export. Cleaned and moisture-controlled.</p>
+            <div class="product-grid">
+                
+                <!-- KETERANGAN: KARTU PRODUK 1 -->
+                <div class="product-card">
+                    <img src="nori cottonii.jpg" alt="Eucheuma Cottonii" class="product-img">
+                    <div class="product-content">
+                        <h3>Eucheuma Cottonii</h3>
+                        <p>High-grade raw dried seaweed for carrageenan processing, food industry, and commercial export. Cleaned and moisture-controlled.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- KETERANGAN: KARTU PRODUK 2 -->
-            <div class="product-card">
-                <img src="POC cottonii.jpg" alt="Liquid Organic Fertilizer" class="product-img">
-                <div class="product-content">
-                    <h3>Liquid Organic Fertilizer</h3>
-                    <p>Seaweed extract bio-stimulant rich in essential micro-nutrients to increase crop yield and restore soil health.</p>
+                <!-- KETERANGAN: KARTU PRODUK 2 -->
+                <div class="product-card">
+                    <img src="POC cottonii.jpg" alt="Liquid Organic Fertilizer" class="product-img">
+                    <div class="product-content">
+                        <h3>Liquid Organic Fertilizer</h3>
+                        <p>Seaweed extract bio-stimulant rich in essential micro-nutrients to increase crop yield and restore soil health.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- KETERANGAN: KARTU PRODUK 3 -->
-            <div class="product-card">
-                <img src="sea salt cottonii.jpg" alt="Premium Sea Salt" class="product-img">
-                <div class="product-content">
-                    <h3>Premium Sea Salt</h3>
-                    <p>Naturally solar-evaporated sea salt sourced from pristine coastal waters. Suitable for industrial and food processing use.</p>
+                <!-- KETERANGAN: KARTU PRODUK 3 -->
+                <div class="product-card">
+                    <img src="sea salt cottonii.jpg" alt="Premium Sea Salt" class="product-img">
+                    <div class="product-content">
+                        <h3>Premium Sea Salt</h3>
+                        <p>Naturally solar-evaporated sea salt sourced from pristine coastal waters. Suitable for industrial and food processing use.</p>
+                    </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
+        </section>
+
+        <!-- KETERANGAN: SECTION ABOUT US -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <h2>About Ainoor Trading</h2>
+                <p>
+                    Ainoor Trading is a Makassar-based Indonesian commodity export firm specializing in high-grade marine products. Operating directly at the sourcing origin, we build equitable partnerships with coastal farming cooperatives to ensure consistent quality control and uninterrupted supply chains.
+                </p>
+                <p>
+                    From raw dried seaweed to eco-friendly agricultural inputs and natural sea salt, we bridge local coastal production with international commercial requirements.
+                </p>
+            </div>
+        </section>
+
     </main>
 
     <!-- KETERANGAN: SECTION FOOTER DAN KONTAK -->
