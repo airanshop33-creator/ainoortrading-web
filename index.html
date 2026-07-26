@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
         }
 
         /* ==========================================
-           2. NAVIGATION BAR
+           2. NAVIGATION BAR & LANG SWITCHER
            ========================================== */
         nav {
             position: sticky;
@@ -50,6 +50,12 @@
             letter-spacing: 0.5px;
         }
 
+        .nav-right-group {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
         .nav-links {
             display: flex;
             gap: 25px;
@@ -65,6 +71,37 @@
 
         .nav-links a:hover {
             color: #ffffff;
+        }
+
+        /* Language Toggle Button Style */
+        .lang-switch-btn {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            color: #94a3b8;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switch-btn:hover {
+            border-color: #2563eb;
+            color: #ffffff;
+        }
+
+        .lang-switch-btn span.active-lang {
+            color: #60a5fa;
+            font-weight: 700;
+        }
+
+        /* Helper class for multilingual content display */
+        .lang-en {
+            display: none;
         }
 
         /* ==========================================
@@ -480,24 +517,56 @@
 </head>
 <body>
 
-    <!-- NAVIGASI UTAMA -->
+    <!-- NAVIGASI UTAMA DENGAN TOMBOL SWITCHER BAHASA -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-brand">Ainoor Trading</a>
-            <div class="nav-links">
-                <a href="#about">About Us</a>
-                <a href="#products">Products</a>
-                <a href="#contact">Contact</a>
+            
+            <div class="nav-right-group">
+                <div class="nav-links">
+                    <a href="#about">
+                        <span class="lang-id">Tentang Kami</span>
+                        <span class="lang-en">About Us</span>
+                    </a>
+                    <a href="#products">
+                        <span class="lang-id">Produk</span>
+                        <span class="lang-en">Products</span>
+                    </a>
+                    <a href="#contact">
+                        <span class="lang-id">Kontak</span>
+                        <span class="lang-en">Contact</span>
+                    </a>
+                </div>
+
+                <!-- Tombol Switch Bahasa -->
+                <button class="lang-switch-btn" onclick="toggleLanguage()">
+                    🌐 <span id="lbl-id" class="active-lang">ID</span> | <span id="lbl-en">EN</span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <header class="hero">
-        <span class="hero-tag">Makassar Marine Commodity Hub</span>
-        <h1>Premium Cottonii Commodities</h1>
-        <p class="hero-sub">Standardized Processing & Direct Sourcing from South Sulawesi, Indonesia</p>
-        <span class="verified-badge">✓ Verified Entity by BKPM Indonesia</span>
+        <span class="hero-tag">
+            <span class="lang-id">Pusat Komoditas Laut Makassar</span>
+            <span class="lang-en">Makassar Marine Commodity Hub</span>
+        </span>
+        
+        <h1>
+            <span class="lang-id">Komoditas Cottonii Unggulan</span>
+            <span class="lang-en">Premium Cottonii Commodities</span>
+        </h1>
+        
+        <p class="hero-sub">
+            <span class="lang-id">Pengolahan Terstandar & Pasokan Langsung dari Sulawesi Selatan, Indonesia</span>
+            <span class="lang-en">Standardized Processing & Direct Sourcing from South Sulawesi, Indonesia</span>
+        </p>
+        
+        <span class="verified-badge">
+            <span class="lang-id">✓ Entitas Terverifikasi BKPM Indonesia</span>
+            <span class="lang-en">✓ Verified Entity by BKPM Indonesia</span>
+        </span>
     </header>
 
     <main class="main-container">
@@ -507,11 +576,20 @@
             <div class="about-accordion-card">
                 <div class="about-main-row" onclick="toggleDetails('about-details', 'arrow-about')">
                     <div class="about-summary-text">
-                        <h2>About Ainoor Trading</h2>
-                        <p>Learn more about our company profile, leadership, and marine commodity sourcing.</p>
+                        <h2>
+                            <span class="lang-id">Tentang Ainoor Trading</span>
+                            <span class="lang-en">About Ainoor Trading</span>
+                        </h2>
+                        <p>
+                            <span class="lang-id">Pelajari profil perusahaan, kepemimpinan, dan rantai pasok komoditas laut kami.</span>
+                            <span class="lang-en">Learn more about our company profile, leadership, and marine commodity sourcing.</span>
+                        </p>
                     </div>
                     <div class="expand-toggle-btn">
-                        <span>Read Company Overview</span>
+                        <span>
+                            <span class="lang-id">Baca Profil Lengkap</span>
+                            <span class="lang-en">Read Company Overview</span>
+                        </span>
                         <span id="arrow-about" class="arrow-icon">▼</span>
                     </div>
                 </div>
@@ -520,28 +598,62 @@
                     <div class="founder-profile-grid">
                         <div class="founder-photo-box">
                             <img src="founder-ainoor.jpeg" alt="Founder of Ainoor Trading">
-                            <caption>Management & Sourcing Lead</caption>
+                            <caption>
+                                <span class="lang-id">Manajemen & Pimpinan Sourcing</span>
+                                <span class="lang-en">Management & Sourcing Lead</span>
+                            </caption>
                         </div>
                         <div class="about-detailed-text">
-                            <p>
-                                <strong>Ainoor Trading</strong> is a specialized export-oriented entity headquartered in Makassar, South Sulawesi. Operating directly at the heart of Indonesia's primary seaweed production hub, we bridge coastal farming cooperatives with international buyers demanding high-specification marine raw materials.
-                            </p>
-                            <p>
-                                Under focused leadership, our business model prioritizes clean solar-drying processing, standardized moisture control, and direct supply chain traceability to ensure carrageenan extraction factories receive consistent quality in every shipment.
-                            </p>
+                            <!-- PARAGRAF BAHASA INDONESIA -->
+                            <div class="lang-id">
+                                <p>
+                                    <strong>Ainoor Trading</strong> adalah entitas bisnis berfokus ekspor yang berpusat di Makassar, Sulawesi Selatan. Beroperasi langsung di jantung pusat produksi rumput laut utama Indonesia, kami menjembatani koperasi petani pesisir dengan pembeli internasional yang membutuhkan bahan baku laut berstandar tinggi.
+                                </p>
+                                <p>
+                                    Di bawah kepemimpinan yang terfokus, model bisnis kami mengutamakan pengolahan penjemuran sinar matahari yang bersih, pengontrolan kadar air terstandar, dan transparansi rantai pasok langsung untuk memastikan pabrik ekstraksi karaginan menerima kualitas yang konsisten di setiap pengiriman.
+                                </p>
+                            </div>
+
+                            <!-- PARAGRAF BAHASA INGGRIS -->
+                            <div class="lang-en">
+                                <p>
+                                    <strong>Ainoor Trading</strong> is a specialized export-oriented entity headquartered in Makassar, South Sulawesi. Operating directly at the heart of Indonesia's primary seaweed production hub, we bridge coastal farming cooperatives with international buyers demanding high-specification marine raw materials.
+                                </p>
+                                <p>
+                                    Under focused leadership, our business model prioritizes clean solar-drying processing, standardized moisture control, and direct supply chain traceability to ensure carrageenan extraction factories receive consistent quality in every shipment.
+                                </p>
+                            </div>
 
                             <div class="about-pillars-grid">
                                 <div class="pillar-item">
-                                    <h4>Direct Sourcing</h4>
-                                    <p>Procured directly from South Sulawesi's coastal farming cooperatives.</p>
+                                    <h4>
+                                        <span class="lang-id">Pasokan Langsung</span>
+                                        <span class="lang-en">Direct Sourcing</span>
+                                    </h4>
+                                    <p>
+                                        <span class="lang-id">Dipanen langsung dari kemitraan koperasi petani pesisir Sulawesi Selatan.</span>
+                                        <span class="lang-en">Procured directly from South Sulawesi's coastal farming cooperatives.</span>
+                                    </p>
                                 </div>
                                 <div class="pillar-item">
-                                    <h4>Quality Control</h4>
-                                    <p>Strict moisture (&lt;12% / 32-35%) and impurity screening before baling.</p>
+                                    <h4>
+                                        <span class="lang-id">Kontrol Kualitas</span>
+                                        <span class="lang-en">Quality Control</span>
+                                    </h4>
+                                    <p>
+                                        <span class="lang-id">Pengujian ketat kadar air (&lt;12% / 32-35%) & kebersihan dari kotoran.</span>
+                                        <span class="lang-en">Strict moisture (&lt;12% / 32-35%) and impurity screening before baling.</span>
+                                    </p>
                                 </div>
                                 <div class="pillar-item">
-                                    <h4>Logistics Hub</h4>
-                                    <p>Direct FCL shipping via Port of Makassar (IDUPG).</p>
+                                    <h4>
+                                        <span class="lang-id">Pusat Logistik</span>
+                                        <span class="lang-en">Logistics Hub</span>
+                                    </h4>
+                                    <p>
+                                        <span class="lang-id">Pengiriman kontainer FCL langsung via Pelabuhan Makassar (IDUPG).</span>
+                                        <span class="lang-en">Direct FCL shipping via Port of Makassar (IDUPG).</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -552,7 +664,10 @@
 
         <!-- PRODUK SECTION WITH INLINE EXPANDABLE DETAILS -->
         <section id="products">
-            <h2 class="section-title">Cottonii Commodity & Processed Line</h2>
+            <h2 class="section-title">
+                <span class="lang-id">Lini Komoditas & Hasil Olahan Cottonii</span>
+                <span class="lang-en">Cottonii Commodity & Processed Line</span>
+            </h2>
             
             <div class="product-list">
                 
@@ -564,13 +679,24 @@
                         </div>
                         <div class="product-details">
                             <h3>Raw Dried Eucheuma Cottonii (Nori Raw Material)</h3>
-                            <ul class="product-bullet-list">
+                            
+                            <ul class="product-bullet-list lang-id">
                                 <li><strong>Khusus Bahan Baku Nori:</strong> Diproses khusus sebagai bahan dasar lembaran nori rumput laut</li>
                                 <li>Tekstur serat terjaga, tingkat kekeringan tinggi, dan bebas kontaminasi lumpur/pasir</li>
                                 <li>Dipanen langsung dari kemitraan petani pesisir Sulawesi Selatan</li>
                             </ul>
+
+                            <ul class="product-bullet-list lang-en">
+                                <li><strong>Nori Raw Material Specialization:</strong> Processed specifically as base material for seaweed nori sheets</li>
+                                <li>Preserved fiber texture, high dryness level, and free from sand/mud contamination</li>
+                                <li>Harvested directly from coastal farmer partnerships in South Sulawesi</li>
+                            </ul>
+
                             <div class="expand-toggle-btn">
-                                <span>View Technical Specifications</span>
+                                <span>
+                                    <span class="lang-id">Lihat Spesifikasi Teknis</span>
+                                    <span class="lang-en">View Technical Specifications</span>
+                                </span>
                                 <span id="arrow-p1" class="arrow-icon">▼</span>
                             </div>
                         </div>
@@ -579,27 +705,60 @@
                     <div id="details-p1" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
-                                <h4>Technical Specifications</h4>
+                                <h4>
+                                    <span class="lang-id">Spesifikasi Teknis</span>
+                                    <span class="lang-en">Technical Specifications</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Origin</td><td>Makassar / South Sulawesi, ID</td></tr>
-                                    <tr><td>Application</td><td>Bahan Baku Lembaran Nori & Snack Rumput Laut</td></tr>
-                                    <tr><td>Moisture Content</td><td>32% - 35% Max</td></tr>
-                                    <tr><td>Impurity Level</td><td>1% - 3% Max</td></tr>
-                                    <tr><td>Drying Process</td><td>Clean Sun Dried / Solar Platform</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Asal Bahan</span><span class="lang-en">Origin</span></td>
+                                        <td>Makassar / South Sulawesi, ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Aplikasi</span><span class="lang-en">Application</span></td>
+                                        <td><span class="lang-id">Bahan Baku Nori & Camilan Rumput Laut</span><span class="lang-en">Nori Sheets & Seaweed Snack Material</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kadar Air</span><span class="lang-en">Moisture Content</span></td>
+                                        <td>32% - 35% Max</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kadar Impuritas</span><span class="lang-en">Impurity Level</span></td>
+                                        <td>1% - 3% Max</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Proses Pengeringan</span><span class="lang-en">Drying Process</span></td>
+                                        <td>Clean Sun Dried / Solar Platform</td>
+                                    </tr>
                                 </table>
                             </div>
                             <div class="spec-box">
-                                <h4>Commercial & Shipping</h4>
+                                <h4>
+                                    <span class="lang-id">Komersial & Pengiriman</span>
+                                    <span class="lang-en">Commercial & Shipping</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Packaging</td><td>Press Bales (100 kg / 50 kg)</td></tr>
-                                    <tr><td>Loadability</td><td>~18-20 MT per 40ft FCL Container</td></tr>
-                                    <tr><td>Inspection</td><td>CoA / Moisture Test Available</td></tr>
-                                    <tr><td>Port of Loading</td><td>Port of Makassar (IDUPG)</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kemasan</span><span class="lang-en">Packaging</span></td>
+                                        <td>Press Bales (100 kg / 50 kg)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kapasitas Muat</span><span class="lang-en">Loadability</span></td>
+                                        <td>~18-20 MT per 40ft FCL Container</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Inspeksi</span><span class="lang-en">Inspection</span></td>
+                                        <td>CoA / Moisture Test Available</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Pelabuhan Muat</span><span class="lang-en">Port of Loading</span></td>
+                                        <td>Port of Makassar (IDUPG)</td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
                         <a href="https://wa.me/6282355515072?text=Inquiry%20regarding%20Raw%20Dried%20Eucheuma%20Cottonii%20for%20Nori" target="_blank" class="btn-direct-inquiry">
-                            💬 Inquiry Nori Raw Material via WhatsApp
+                            💬 <span class="lang-id">Inquiry Bahan Nori via WhatsApp</span><span class="lang-en">Inquiry Nori Raw Material via WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -612,13 +771,24 @@
                         </div>
                         <div class="product-details">
                             <h3>PuntondoGel – Food Grade (Mesh 80–100)</h3>
-                            <ul class="product-bullet-list">
+                            
+                            <ul class="product-bullet-list lang-id">
                                 <li><strong>Kategori:</strong> Food Additive (E407a) / Pengental & Pengikat Pangan</li>
                                 <li><strong>Fungsi Utama:</strong> Meningkatkan kenyal, menahan kadar air, dan menstabilkan tekstur makanan</li>
                                 <li><strong>Aplikasi Olahan:</strong> Sosis, bakso, nugget, es krim, yogurt, jelly, dan agar-agar</li>
                             </ul>
+
+                            <ul class="product-bullet-list lang-en">
+                                <li><strong>Category:</strong> Food Additive (E407a) / Food Thickener & Binder</li>
+                                <li><strong>Main Function:</strong> Enhances elasticity, improves water retention, and stabilizes food texture</li>
+                                <li><strong>Food Applications:</strong> Sausages, meat/fish balls, nuggets, ice cream, yogurt, and jelly/agar</li>
+                            </ul>
+
                             <div class="expand-toggle-btn">
-                                <span>View Technical Specifications</span>
+                                <span>
+                                    <span class="lang-id">Lihat Spesifikasi Teknis</span>
+                                    <span class="lang-en">View Technical Specifications</span>
+                                </span>
                                 <span id="arrow-pg-food" class="arrow-icon">▼</span>
                             </div>
                         </div>
@@ -627,27 +797,60 @@
                     <div id="details-pg-food" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
-                                <h4>Technical Specifications</h4>
+                                <h4>
+                                    <span class="lang-id">Spesifikasi Teknis</span>
+                                    <span class="lang-en">Technical Specifications</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Category</td><td>Food Additive (E407a)</td></tr>
-                                    <tr><td>Mesh Size</td><td>Mesh 80 - 100 (Tepung Halus)</td></tr>
-                                    <tr><td>Color & Form</td><td>Serbuk Halus Krem / Putih</td></tr>
-                                    <tr><td>Moisture Content</td><td>&lt; 12%</td></tr>
-                                    <tr><td>Hygiene Standard</td><td>Stainless Steel SS304 Processing</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kategori</span><span class="lang-en">Category</span></td>
+                                        <td>Food Additive (E407a)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Ukuran Mesh</span><span class="lang-en">Mesh Size</span></td>
+                                        <td>Mesh 80 - 100 (Tepung Halus)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Warna & Bentuk</span><span class="lang-en">Color & Form</span></td>
+                                        <td><span class="lang-id">Serbuk Halus Krem / Putih</span><span class="lang-en">Fine Off-White / Cream Powder</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kadar Air</span><span class="lang-en">Moisture Content</span></td>
+                                        <td>&lt; 12%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Standar Higienis</span><span class="lang-en">Hygiene Standard</span></td>
+                                        <td>Stainless Steel SS304 Processing</td>
+                                    </tr>
                                 </table>
                             </div>
                             <div class="spec-box">
-                                <h4>Commercial & Applications</h4>
+                                <h4>
+                                    <span class="lang-id">Komersial & Aplikasi</span>
+                                    <span class="lang-en">Commercial & Applications</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Applications</td><td>Sosis, Bakso, Nugget, Es Krim, Yogurt, Jelly, Agar-agar</td></tr>
-                                    <tr><td>Packaging</td><td>Kraft Paper Bag 25 kg</td></tr>
-                                    <tr><td>Main Role</td><td>Water Retention, Texture Stabilizer, Gelling Agent</td></tr>
-                                    <tr><td>Port of Loading</td><td>Port of Makassar (IDUPG)</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Aplikasi Pangan</span><span class="lang-en">Applications</span></td>
+                                        <td>Sausages, Meatballs, Nuggets, Ice Cream, Yogurt, Jelly</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kemasan</span><span class="lang-en">Packaging</span></td>
+                                        <td>Kraft Paper Bag 25 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Peran Utama</span><span class="lang-en">Main Role</span></td>
+                                        <td>Water Retention, Texture Stabilizer, Gelling Agent</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Pelabuhan Muat</span><span class="lang-en">Port of Loading</span></td>
+                                        <td>Port of Makassar (IDUPG)</td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
                         <a href="https://wa.me/6282355515072?text=Inquiry%20regarding%20PuntondoGel%20Food%20Grade" target="_blank" class="btn-direct-inquiry">
-                            💬 Inquiry PuntondoGel Food Grade via WhatsApp
+                            💬 <span class="lang-id">Inquiry PuntondoGel Food Grade via WhatsApp</span><span class="lang-en">Inquiry PuntondoGel Food Grade via WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -660,13 +863,24 @@
                         </div>
                         <div class="product-details">
                             <h3>PuntondoGel – Pet & Feed Grade (Mesh 60–80)</h3>
-                            <ul class="product-bullet-list">
+                            
+                            <ul class="product-bullet-list lang-id">
                                 <li><strong>Kategori:</strong> Feed Additive / Pembentuk Gel Pakan Hewan</li>
                                 <li><strong>Fungsi Utama:</strong> Membentuk lapisan jeli (jelly/loaf) dan mengentalkan kuah (gravy)</li>
                                 <li><strong>Aplikasi Olahan:</strong> Makanan kucing & anjing basah (wet canned pet food) dan pelet ternak</li>
                             </ul>
+
+                            <ul class="product-bullet-list lang-en">
+                                <li><strong>Category:</strong> Feed Additive / Pet Food Binder</li>
+                                <li><strong>Main Function:</strong> Forms rich jelly/loaf structure and thickens gravy in pet food</li>
+                                <li><strong>Applications:</strong> Wet canned cat & dog food and high-grade feed pellets</li>
+                            </ul>
+
                             <div class="expand-toggle-btn">
-                                <span>View Technical Specifications</span>
+                                <span>
+                                    <span class="lang-id">Lihat Spesifikasi Teknis</span>
+                                    <span class="lang-en">View Technical Specifications</span>
+                                </span>
                                 <span id="arrow-pg-feed" class="arrow-icon">▼</span>
                             </div>
                         </div>
@@ -675,26 +889,56 @@
                     <div id="details-pg-feed" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
-                                <h4>Technical Specifications</h4>
+                                <h4>
+                                    <span class="lang-id">Spesifikasi Teknis</span>
+                                    <span class="lang-en">Technical Specifications</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Category</td><td>Feed Additive / Pet Food Binder</td></tr>
-                                    <tr><td>Mesh Size</td><td>Mesh 60 - 80 (Serbuk Sedang)</td></tr>
-                                    <tr><td>Moisture Content</td><td>&lt; 12%</td></tr>
-                                    <tr><td>Key Property</td><td>Daya Ikat Cair & Pembentuk Jeli Tinggi</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kategori</span><span class="lang-en">Category</span></td>
+                                        <td>Feed Additive / Pet Food Binder</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Ukuran Mesh</span><span class="lang-en">Mesh Size</span></td>
+                                        <td>Mesh 60 - 80 (Serbuk Sedang)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kadar Air</span><span class="lang-en">Moisture Content</span></td>
+                                        <td>&lt; 12%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Sifat Utama</span><span class="lang-en">Key Property</span></td>
+                                        <td><span class="lang-id">Daya Ikat Cair & Pembentuk Jeli Tinggi</span><span class="lang-en">High Water Binding & Gelling Capacity</span></td>
+                                    </tr>
                                 </table>
                             </div>
                             <div class="spec-box">
-                                <h4>Commercial & Applications</h4>
+                                <h4>
+                                    <span class="lang-id">Komersial & Aplikasi</span>
+                                    <span class="lang-en">Commercial & Applications</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Applications</td><td>Wet Canned Pet Food (Kucing/Anjing) & Pelet Pakan</td></tr>
-                                    <tr><td>Packaging</td><td>Karung Woven PP 25 kg / 50 kg</td></tr>
-                                    <tr><td>Main Role</td><td>Jelly / Loaf Former & Gravy Thickener</td></tr>
-                                    <tr><td>Port of Loading</td><td>Port of Makassar (IDUPG)</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Aplikasi</span><span class="lang-en">Applications</span></td>
+                                        <td>Wet Canned Pet Food (Kucing/Anjing) & Pelet Pakan</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kemasan</span><span class="lang-en">Packaging</span></td>
+                                        <td>Karung Woven PP 25 kg / 50 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Peran Utama</span><span class="lang-en">Main Role</span></td>
+                                        <td>Jelly / Loaf Former & Gravy Thickener</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Pelabuhan Muat</span><span class="lang-en">Port of Loading</span></td>
+                                        <td>Port of Makassar (IDUPG)</td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
                         <a href="https://wa.me/6282355515072?text=Inquiry%20regarding%20PuntondoGel%20Pet%20Feed%20Grade" target="_blank" class="btn-direct-inquiry">
-                            💬 Inquiry PuntondoGel Feed Grade via WhatsApp
+                            💬 <span class="lang-id">Inquiry PuntondoGel Feed Grade via WhatsApp</span><span class="lang-en">Inquiry PuntondoGel Feed Grade via WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -707,13 +951,24 @@
                         </div>
                         <div class="product-details">
                             <h3>PuntondoGel – Technical Grade (Chips / Flakes)</h3>
-                            <ul class="product-bullet-list">
+                            
+                            <ul class="product-bullet-list lang-id">
                                 <li><strong>Kategori:</strong> Industrial Raw Material / Rumput Laut Olahan Setengah Jadi</li>
                                 <li><strong>Fungsi Utama:</strong> Bahan baku ekstraksi tingkat lanjut & pengental industri non-makanan</li>
                                 <li><strong>Aplikasi Olahan:</strong> Bahan baku Refined Carrageenan (ekspor), pengharum ruangan gel, & tekstil</li>
                             </ul>
+
+                            <ul class="product-bullet-list lang-en">
+                                <li><strong>Category:</strong> Industrial Raw Material / Semi-Processed Seaweed</li>
+                                <li><strong>Main Function:</strong> Raw material for advanced carrageenan extraction & non-food industrial thickener</li>
+                                <li><strong>Applications:</strong> Refined Carrageenan export feed, air freshener gels, & textile printing paste</li>
+                            </ul>
+
                             <div class="expand-toggle-btn">
-                                <span>View Technical Specifications</span>
+                                <span>
+                                    <span class="lang-id">Lihat Spesifikasi Teknis</span>
+                                    <span class="lang-en">View Technical Specifications</span>
+                                </span>
                                 <span id="arrow-pg-tech" class="arrow-icon">▼</span>
                             </div>
                         </div>
@@ -722,26 +977,56 @@
                     <div id="details-pg-tech" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
-                                <h4>Technical Specifications</h4>
+                                <h4>
+                                    <span class="lang-id">Spesifikasi Teknis</span>
+                                    <span class="lang-en">Technical Specifications</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Category</td><td>Industrial Raw Material / Semi-Processed</td></tr>
-                                    <tr><td>Form</td><td>Potongan Kering (Unmilled Chips 2–3 cm)</td></tr>
-                                    <tr><td>Treatment</td><td>KOH Treated Processing</td></tr>
-                                    <tr><td>Moisture Content</td><td>&lt; 12%</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kategori</span><span class="lang-en">Category</span></td>
+                                        <td>Industrial Raw Material / Semi-Processed</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Bentuk</span><span class="lang-en">Form</span></td>
+                                        <td>Potongan Kering (Unmilled Chips 2–3 cm)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Proses</span><span class="lang-en">Treatment</span></td>
+                                        <td>KOH Treated Processing</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kadar Air</span><span class="lang-en">Moisture Content</span></td>
+                                        <td>&lt; 12%</td>
+                                    </tr>
                                 </table>
                             </div>
                             <div class="spec-box">
-                                <h4>Commercial & Applications</h4>
+                                <h4>
+                                    <span class="lang-id">Komersial & Aplikasi</span>
+                                    <span class="lang-en">Commercial & Applications</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Applications</td><td>Refined Carrageenan Extraction, Air Freshener Gel, Textile Thickener</td></tr>
-                                    <tr><td>Packaging</td><td>Karung Pres 50 kg / Jumbo Bag 500 kg</td></tr>
-                                    <tr><td>Export Ready</td><td>FCL Bulk Industrial Export</td></tr>
-                                    <tr><td>Port of Loading</td><td>Port of Makassar (IDUPG)</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Aplikasi</span><span class="lang-en">Applications</span></td>
+                                        <td>Refined Carrageenan Extraction, Air Freshener Gel, Textile Thickener</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kemasan</span><span class="lang-en">Packaging</span></td>
+                                        <td>Karung Pres 50 kg / Jumbo Bag 500 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kesiapan Ekspor</span><span class="lang-en">Export Status</span></td>
+                                        <td>FCL Bulk Industrial Export Ready</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Pelabuhan Muat</span><span class="lang-en">Port of Loading</span></td>
+                                        <td>Port of Makassar (IDUPG)</td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
                         <a href="https://wa.me/6282355515072?text=Inquiry%20regarding%20PuntondoGel%20Technical%20Grade" target="_blank" class="btn-direct-inquiry">
-                            💬 Inquiry PuntondoGel Technical Grade via WhatsApp
+                            💬 <span class="lang-id">Inquiry Technical Grade via WhatsApp</span><span class="lang-en">Inquiry Technical Grade via WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -754,13 +1039,24 @@
                         </div>
                         <div class="product-details">
                             <h3>Cottonii-Based Liquid Fertilizer (POC Rumput Laut)</h3>
-                            <ul class="product-bullet-list">
+                            
+                            <ul class="product-bullet-list lang-id">
                                 <li><strong>Biostimulan Bio-Proses:</strong> Ekstrak murni Eucheuma Cottonii kaya auksin, sitokinin, & hara mikro</li>
                                 <li><strong>Peruntukan Tanaman Pangan:</strong> Padi, jagung, kedelai, dan umbi-umbian</li>
                                 <li><strong>Peruntukan Hortikultura & Perkebunan:</strong> Cabai, tomat, melon, kelapa sawit, kakao, & kopi</li>
                             </ul>
+
+                            <ul class="product-bullet-list lang-en">
+                                <li><strong>Bio-Processed Biostimulant:</strong> Pure Eucheuma Cottonii extract rich in auxins, cytokinins, & trace minerals</li>
+                                <li><strong>Food Crop Target:</strong> Rice, corn, soybeans, and root tubers</li>
+                                <li><strong>Horticulture & Plantation Target:</strong> Chili, tomatoes, melons, oil palm, cocoa, & coffee</li>
+                            </ul>
+
                             <div class="expand-toggle-btn">
-                                <span>View Technical Specifications</span>
+                                <span>
+                                    <span class="lang-id">Lihat Spesifikasi Teknis</span>
+                                    <span class="lang-en">View Technical Specifications</span>
+                                </span>
                                 <span id="arrow-p2" class="arrow-icon">▼</span>
                             </div>
                         </div>
@@ -769,26 +1065,56 @@
                     <div id="details-p2" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
-                                <h4>Product Profile</h4>
+                                <h4>
+                                    <span class="lang-id">Profil Produk</span>
+                                    <span class="lang-en">Product Profile</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Form</td><td>Concentrated Liquid Bio-stimulant</td></tr>
-                                    <tr><td>Target Crops</td><td>Padi, Jagung, Cabai, Tomat, Sawit, Kakao, Kopi</td></tr>
-                                    <tr><td>Active Extract</td><td>100% Pure Eucheuma Cottonii Extract</td></tr>
-                                    <tr><td>Key Bio-actives</td><td>Auxins, Cytokinins, Minerals, Trace Elements</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Bentuk</span><span class="lang-en">Form</span></td>
+                                        <td>Concentrated Liquid Bio-stimulant</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Tanaman Sasaran</span><span class="lang-en">Target Crops</span></td>
+                                        <td>Padi, Jagung, Cabai, Tomat, Sawit, Kakao, Kopi</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Ekstrak Aktif</span><span class="lang-en">Active Extract</span></td>
+                                        <td>100% Pure Eucheuma Cottonii Extract</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kandungan Utama</span><span class="lang-en">Key Bio-actives</span></td>
+                                        <td>Auxins, Cytokinins, Minerals, Trace Elements</td>
+                                    </tr>
                                 </table>
                             </div>
                             <div class="spec-box">
-                                <h4>Benefits & Packaging</h4>
+                                <h4>
+                                    <span class="lang-id">Manfaat & Kemasan</span>
+                                    <span class="lang-en">Benefits & Packaging</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Main Benefits</td><td>Merangsang akar, memperbanyak anakan/bunga, mencegah rontok buah</td></tr>
-                                    <tr><td>Application</td><td>Semprot Daun (Foliar) & Kocor Akar (Fertigasi)</td></tr>
-                                    <tr><td>Packaging Options</td><td>1L Botol, 20L Drum, 1000L IBC Tote</td></tr>
-                                    <tr><td>Shelf Life</td><td>24 Bulan dari tanggal produksi</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Manfaat Utama</span><span class="lang-en">Main Benefits</span></td>
+                                        <td><span class="lang-id">Merangsang akar, memperbanyak anakan/bunga, mencegah rontok buah</span><span class="lang-en">Stimulates roots, increases tillers/flowers, prevents fruit drop</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Aplikasi</span><span class="lang-en">Application</span></td>
+                                        <td><span class="lang-id">Semprot Daun (Foliar) & Kocor Akar (Fertigasi)</span><span class="lang-en">Foliar Spray & Root Drench (Fertigation)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Opsi Kemasan</span><span class="lang-en">Packaging Options</span></td>
+                                        <td>1L Botol, 20L Drum, 1000L IBC Tote</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Masa Simpan</span><span class="lang-en">Shelf Life</span></td>
+                                        <td>24 Months from production date</td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
                         <a href="https://wa.me/6282355515072?text=Inquiry%20regarding%20Cottonii-Based%20Liquid%20Fertilizer" target="_blank" class="btn-direct-inquiry">
-                            💬 Inquiry Liquid Fertilizer via WhatsApp
+                            💬 <span class="lang-id">Inquiry Pupuk Cair via WhatsApp</span><span class="lang-en">Inquiry Liquid Fertilizer via WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -801,13 +1127,24 @@
                         </div>
                         <div class="product-details">
                             <h3>Coastal Food & Industrial Sea Salt</h3>
-                            <ul class="product-bullet-list">
+                            
+                            <ul class="product-bullet-list lang-id">
                                 <li><strong>Garam Laut Alami:</strong> Diproduksi melalui evaporasi sinar matahari di wilayah pesisir murni</li>
                                 <li><strong>Manfaat & Kegunaan:</strong> Mengawetkan makanan alami, penyeimbang rasa, & menjaga kadar air bahan pangan</li>
                                 <li><strong>Tambahan Makanan & Olahan:</strong> Pengawetan ikan & daging, bumbu tabur, saus, produk asin hasil laut, & kecap</li>
                             </ul>
+
+                            <ul class="product-bullet-list lang-en">
+                                <li><strong>Natural Sea Salt:</strong> Produced through natural solar evaporation in pristine coastal areas</li>
+                                <li><strong>Key Uses:</strong> Natural food preservation, flavor enhancer, and moisture balance agent</li>
+                                <li><strong>Food Industry Applications:</strong> Fish/meat curing, seasoning blends, seafood processing, & soy sauce</li>
+                            </ul>
+
                             <div class="expand-toggle-btn">
-                                <span>View Technical Specifications</span>
+                                <span>
+                                    <span class="lang-id">Lihat Spesifikasi Teknis</span>
+                                    <span class="lang-en">View Technical Specifications</span>
+                                </span>
                                 <span id="arrow-p3" class="arrow-icon">▼</span>
                             </div>
                         </div>
@@ -816,26 +1153,56 @@
                     <div id="details-p3" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
-                                <h4>Chemical Specifications</h4>
+                                <h4>
+                                    <span class="lang-id">Spesifikasi Kimia</span>
+                                    <span class="lang-en">Chemical Specifications</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>NaCl Content</td><td>95% - 98% High Purity</td></tr>
-                                    <tr><td>Grain Size</td><td>Kristal Kasar / Sedang</td></tr>
-                                    <tr><td>Additive</td><td>100% Alami / Tanpa Bahan Kimia Sintetis</td></tr>
-                                    <tr><td>Main Role</td><td>Pengawet Alami, Penambah Cita Rasa, Pemrosesan Pangan</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kadar NaCl</span><span class="lang-en">NaCl Content</span></td>
+                                        <td>95% - 98% High Purity</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Ukuran Kristal</span><span class="lang-en">Grain Size</span></td>
+                                        <td><span class="lang-id">Kristal Kasar / Sedang</span><span class="lang-en">Coarse / Medium Coarse Grain</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Bahan Tambahan</span><span class="lang-en">Additive</span></td>
+                                        <td><span class="lang-id">100% Alami / Tanpa Bahan Kimia Sintetis</span><span class="lang-en">100% Natural / No Synthetic Additives</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Peran Utama</span><span class="lang-en">Main Role</span></td>
+                                        <td><span class="lang-id">Pengawet Alami, Penambah Cita Rasa</span><span class="lang-en">Natural Preservative, Flavor Enhancer</span></td>
+                                    </tr>
                                 </table>
                             </div>
                             <div class="spec-box">
-                                <h4>Food & Industrial Use</h4>
+                                <h4>
+                                    <span class="lang-id">Aplikasi Pangan & Industri</span>
+                                    <span class="lang-en">Food & Industrial Use</span>
+                                </h4>
                                 <table class="spec-table">
-                                    <tr><td>Food Applications</td><td>Ikan/Daging Asin, Bumbu Olahan, Produk Hasil Laut, Kecap, Marinasi</td></tr>
-                                    <tr><td>Industrial Uses</td><td>Pengolahan Hasil Laut & Preservasi Pangan Sekala Industri</td></tr>
-                                    <tr><td>Packaging</td><td>Karung 50 kg / Jumbo Bag 1000 kg</td></tr>
-                                    <tr><td>Port of Loading</td><td>Port of Makassar (IDUPG)</td></tr>
+                                    <tr>
+                                        <td><span class="lang-id">Aplikasi Pangan</span><span class="lang-en">Food Applications</span></td>
+                                        <td>Ikan/Daging Asin, Bumbu Olahan, Produk Hasil Laut, Kecap, Marinasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Penggunaan Industri</span><span class="lang-en">Industrial Uses</span></td>
+                                        <td><span class="lang-id">Pengolahan Hasil Laut & Preservasi Pangan Sekala Industri</span><span class="lang-en">Seafood Processing & Industrial Food Preservation</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Kemasan</span><span class="lang-en">Packaging</span></td>
+                                        <td>Karung 50 kg / Jumbo Bag 1000 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="lang-id">Pelabuhan Muat</span><span class="lang-en">Port of Loading</span></td>
+                                        <td>Port of Makassar (IDUPG)</td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
                         <a href="https://wa.me/6282355515072?text=Inquiry%20regarding%20Coastal%20Sea%20Salt" target="_blank" class="btn-direct-inquiry">
-                            💬 Inquiry Sea Salt via WhatsApp
+                            💬 <span class="lang-id">Inquiry Garam Laut via WhatsApp</span><span class="lang-en">Inquiry Sea Salt via WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -848,11 +1215,18 @@
     <!-- FOOTER DAN KONTAK -->
     <footer id="contact">
         <div class="footer-container">
-            <h2>Get in Touch for Orders & Inquiries</h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 5px;">Contact us directly for product specifications, laboratory test parameters, or official trade inquiries.</p>
+            <h2>
+                <span class="lang-id">Hubungi Kami untuk Pemesanan & Permintaan</span>
+                <span class="lang-en">Get in Touch for Orders & Inquiries</span>
+            </h2>
+            
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 5px;">
+                <span class="lang-id">Hubungi kami secara langsung untuk spesifikasi produk, parameter uji laboratorium, atau pertanyaan perdagangan resmi.</span>
+                <span class="lang-en">Contact us directly for product specifications, laboratory test parameters, or official trade inquiries.</span>
+            </p>
 
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ekspor@ainoortrading.com&su=Inquiry:+Cottonii+Commodities" target="_blank" class="btn-email-official">
-                ✉️ Send Official Email
+                ✉️ <span class="lang-id">Kirim Email Resmi</span><span class="lang-en">Send Official Email</span>
             </a>
 
             <div class="social-channels">
@@ -863,8 +1237,9 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT UNTUK EXPAND/COLLAPSE INLINE -->
+    <!-- JAVASCRIPT UNTUK EXPAND/COLLAPSE & TOGGLE BAHASA -->
     <script>
+        // Fungsi Expand / Collapse Kartu Produk & About
         function toggleDetails(detailsId, arrowId) {
             const detailsElement = document.getElementById(detailsId);
             const arrowElement = document.getElementById(arrowId);
@@ -877,6 +1252,37 @@
             } else {
                 detailsElement.style.display = 'block';
                 arrowElement.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Variabel Status Bahasa Saat Ini (Default: ID)
+        let currentLang = 'id';
+
+        // Fungsi Beralih Bahasa (Toggle Language ID <-> EN)
+        function toggleLanguage() {
+            const idElements = document.querySelectorAll('.lang-id');
+            const enElements = document.querySelectorAll('.lang-en');
+            const lblId = document.getElementById('lbl-id');
+            const lblEn = document.getElementById('lbl-en');
+
+            if (currentLang === 'id') {
+                // Ubah ke Bahasa Inggris (EN)
+                idElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'inline-block');
+                
+                lblId.classList.remove('active-lang');
+                lblEn.classList.add('active-lang');
+                document.documentElement.lang = 'en';
+                currentLang = 'en';
+            } else {
+                // Ubah ke Bahasa Indonesia (ID)
+                enElements.forEach(el => el.style.display = 'none');
+                idElements.forEach(el => el.style.display = 'inline-block');
+                
+                lblEn.classList.remove('active-lang');
+                lblId.classList.add('active-lang');
+                document.documentElement.lang = 'id';
+                currentLang = 'id';
             }
         }
     </script>
