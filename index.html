@@ -68,28 +68,60 @@
         }
 
         /* ==========================================
-           3. HERO SECTION
+           3. HERO SECTION (DIPERCANTIK)
            ========================================== */
         .hero {
-            background-color: #0f172a;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
-            padding: 50px 20px 60px 20px;
+            padding: 65px 20px 75px 20px;
             text-align: center;
+            border-bottom: 3px solid #2563eb;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.8rem;
             font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            font-weight: 400;
+            max-width: 650px;
+            margin: 0 auto 20px auto;
         }
 
         .verified-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             color: #4ade80;
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            background-color: rgba(74, 222, 128, 0.1);
+            padding: 6px 14px;
+            border-radius: 6px;
         }
 
         /* ==========================================
@@ -301,9 +333,11 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (HEADER BERGAYA BARU) -->
     <header class="hero">
-        <h1>Commodities Cottonii</h1>
+        <span class="hero-tag">Makassar Marine Commodity Hub</span>
+        <h1>Premium Cottonii Commodities</h1>
+        <p class="hero-sub">Standardized Processing & Direct Sourcing from South Sulawesi, Indonesia</p>
         <span class="verified-badge">✓ Verified Entity by BKPM Indonesia</span>
     </header>
 
@@ -392,7 +426,7 @@
                 ✉️ Send Official Email
             </a>
 
-            <!-- LINK WHATSAPP (WECHAT SUDAH DIHAPUS) -->
+            <!-- LINK WHATSAPP -->
             <div class="social-channels">
                 <a href="https://wa.me/6282355515072" target="_blank">💬 WhatsApp: +62 823-5551-5072</a>
             </div>
