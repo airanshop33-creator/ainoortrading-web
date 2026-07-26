@@ -93,7 +93,7 @@
         }
 
         /* ==========================================
-           4. MAIN CONTENT & PRODUCTS
+           4. MAIN CONTENT
            ========================================== */
         .main-container {
             max-width: 1000px;
@@ -101,16 +101,44 @@
             padding: 0 20px;
         }
 
-        /* Pengantar Perusahaan di Atas Katalog Produk */
-        .intro-text {
-            color: #475569;
-            font-size: 1.05rem;
-            text-align: center;
+        /* ABOUT US SECTION (DIPINDAHKAN KE ATAS KATALOG) */
+        .about-section {
+            background-color: #ffffff;
+            padding: 35px 35px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+        }
+
+        .about-container {
             max-width: 850px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto;
+        }
+
+        .about-container h2 {
+            font-size: 1.8rem;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .about-container p {
+            color: #475569;
+            font-size: 1rem;
+            text-align: justify;
+            margin-bottom: 12px;
             line-height: 1.7;
         }
 
+        .about-container p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================
+           5. PRODUCTS SECTION
+           ========================================== */
         .section-title {
             text-align: center;
             font-size: 1.8rem;
@@ -199,37 +227,6 @@
         }
 
         /* ==========================================
-           5. ABOUT US SECTION
-           ========================================== */
-        .about-section {
-            background-color: #ffffff;
-            padding: 35px 35px;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 60px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
-        }
-
-        .about-container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .about-container h2 {
-            font-size: 1.8rem;
-            color: #0f172a;
-            text-align: center;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .about-container p {
-            color: #475569;
-            font-size: 1rem;
-            text-align: justify;
-        }
-
-        /* ==========================================
            6. FOOTER & CONTACT
            ========================================== */
         footer {
@@ -292,8 +289,8 @@
         <div class="nav-container">
             <a href="index.html" class="nav-brand">Ainoor Trading</a>
             <div class="nav-links">
-                <a href="#products">Products</a>
                 <a href="#about">About Us</a>
+                <a href="#products">Products</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -307,10 +304,18 @@
 
     <main class="main-container">
         
-        <!-- KETERANGAN: PARAGRAF PERTAMA ABOUT US YANG DIPINDAHKAN KE ATAS KATALOG -->
-        <p class="intro-text">
-            Ainoor Trading is a Makassar-based Indonesian commodity export firm specializing in high-grade marine products. Operating directly at the sourcing origin, we build equitable partnerships with coastal farming cooperatives to ensure consistent quality control and uninterrupted supply chains.
-        </p>
+        <!-- KETERANGAN: SECTION ABOUT US (DI ATAS KATALOG PRODUK) -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <h2>About Ainoor Trading</h2>
+                <p>
+                    Ainoor Trading is a Makassar-based Indonesian commodity export firm specializing in high-grade marine products. Operating directly at the sourcing origin, we build equitable partnerships with coastal farming cooperatives to ensure consistent quality control and uninterrupted supply chains.
+                </p>
+                <p>
+                    From raw dried seaweed to eco-friendly agricultural inputs and natural sea salt, we bridge local coastal production with international commercial requirements.
+                </p>
+            </div>
+        </section>
 
         <!-- KETERANGAN: SECTION PRODUK HORIZONTAL -->
         <section id="products">
@@ -366,16 +371,6 @@
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- KETERANGAN: SECTION ABOUT US -->
-        <section id="about" class="about-section">
-            <div class="about-container">
-                <h2>About Ainoor Trading</h2>
-                <p>
-                    From raw dried seaweed to eco-friendly agricultural inputs and natural sea salt, we bridge local coastal production with international commercial requirements.
-                </p>
             </div>
         </section>
 
