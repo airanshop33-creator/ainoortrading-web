@@ -73,21 +73,14 @@
         .hero {
             background-color: #0f172a;
             color: #ffffff;
-            padding: 60px 20px 70px 20px;
+            padding: 50px 20px 60px 20px;
             text-align: center;
         }
 
         .hero h1 {
             font-size: 2.5rem;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-weight: 800;
-        }
-
-        .hero p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 20px auto;
         }
 
         .verified-badge {
@@ -100,19 +93,29 @@
         }
 
         /* ==========================================
-           4. HORIZONTAL PRODUCT LAYOUT (DESKTOP)
+           4. MAIN CONTENT & PRODUCTS
            ========================================== */
         .main-container {
             max-width: 1000px;
-            margin: 50px auto;
+            margin: 40px auto 50px auto;
             padding: 0 20px;
+        }
+
+        /* Pengantar Perusahaan di Atas Katalog Produk */
+        .intro-text {
+            color: #475569;
+            font-size: 1.05rem;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            line-height: 1.7;
         }
 
         .section-title {
             text-align: center;
             font-size: 1.8rem;
             color: #0f172a;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             font-weight: 700;
         }
 
@@ -129,7 +132,7 @@
             border: 1px solid #e2e8f0;
             border-radius: 10px;
             display: flex;
-            flex-direction: row; /* Gambar Kiri, Detail Kanan */
+            flex-direction: row;
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
             transition: transform 0.2s, box-shadow 0.2s;
@@ -185,7 +188,6 @@
             padding-left: 20px;
         }
 
-        /* Ikon Centang Kecil untuk Tiap Poin */
         .product-bullet-list li::before {
             content: "•";
             color: #2563eb;
@@ -201,7 +203,7 @@
            ========================================== */
         .about-section {
             background-color: #ffffff;
-            padding: 40px 35px;
+            padding: 35px 35px;
             border-radius: 10px;
             border: 1px solid #e2e8f0;
             margin-bottom: 60px;
@@ -225,7 +227,6 @@
             color: #475569;
             font-size: 1rem;
             text-align: justify;
-            margin-bottom: 12px;
         }
 
         /* ==========================================
@@ -298,15 +299,19 @@
         </div>
     </nav>
 
-    <!-- KETERANGAN: SECTION HERO / BANNER UTAMA -->
+    <!-- KETERANGAN: SECTION HERO / BANNER UTAMA (PARAGRAF DISINI SUDAH DIHAPUS) -->
     <header class="hero">
         <h1>Sustainably Sourced Marine Commodities</h1>
-        <p>Exporting premium Eucheuma Cottonii, Liquid Organic Fertilizer, and Natural Sea Salt directly from Makassar, Indonesia.</p>
         <span class="verified-badge">✓ Verified Entity by BKPM Indonesia</span>
     </header>
 
     <main class="main-container">
         
+        <!-- KETERANGAN: PARAGRAF PERTAMA ABOUT US YANG DIPINDAHKAN KE ATAS KATALOG -->
+        <p class="intro-text">
+            Ainoor Trading is a Makassar-based Indonesian commodity export firm specializing in high-grade marine products. Operating directly at the sourcing origin, we build equitable partnerships with coastal farming cooperatives to ensure consistent quality control and uninterrupted supply chains.
+        </p>
+
         <!-- KETERANGAN: SECTION PRODUK HORIZONTAL -->
         <section id="products">
             <h2 class="section-title">Our Main Products</h2>
@@ -368,9 +373,6 @@
         <section id="about" class="about-section">
             <div class="about-container">
                 <h2>About Ainoor Trading</h2>
-                <p>
-                    Ainoor Trading is a Makassar-based Indonesian commodity export firm specializing in high-grade marine products. Operating directly at the sourcing origin, we build equitable partnerships with coastal farming cooperatives to ensure consistent quality control and uninterrupted supply chains.
-                </p>
                 <p>
                     From raw dried seaweed to eco-friendly agricultural inputs and natural sea salt, we bridge local coastal production with international commercial requirements.
                 </p>
