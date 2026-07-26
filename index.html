@@ -125,7 +125,7 @@
         }
 
         /* ==========================================
-           4. MAIN CONTENT
+           4. MAIN CONTAINER & ACCORDION STYLES
            ========================================== */
         .main-container {
             max-width: 1000px;
@@ -133,44 +133,6 @@
             padding: 0 20px;
         }
 
-        /* ABOUT US SECTION */
-        .about-section {
-            background-color: #ffffff;
-            padding: 35px 35px;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
-        }
-
-        .about-container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .about-container h2 {
-            font-size: 1.8rem;
-            color: #0f172a;
-            text-align: center;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .about-container p {
-            color: #475569;
-            font-size: 1rem;
-            text-align: justify;
-            margin-bottom: 12px;
-            line-height: 1.7;
-        }
-
-        .about-container p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* ==========================================
-           5. PRODUCTS SECTION & EXPANDABLE CARDS
-           ========================================== */
         .section-title {
             text-align: center;
             font-size: 1.8rem;
@@ -179,6 +141,134 @@
             font-weight: 700;
         }
 
+        /* ABOUT US ACCORDION CARD */
+        .about-accordion-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+            margin-bottom: 50px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .about-accordion-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-main-row {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+
+        .about-summary-text h2 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .about-summary-text p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .expand-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #2563eb;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .expand-toggle-btn .arrow-icon {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        /* ABOUT EXPANDED CONTENT */
+        .about-expanded-content {
+            display: none;
+            padding: 30px;
+            background-color: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .founder-profile-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .founder-photo-box {
+            text-align: center;
+        }
+
+        .founder-photo-box img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .founder-photo-box caption {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .about-detailed-text p {
+            color: #475569;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .about-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .pillar-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .pillar-item h4 {
+            font-size: 0.9rem;
+            color: #0f172a;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .pillar-item p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        /* ==========================================
+           5. PRODUCTS SECTION & EXPANDABLE CARDS
+           ========================================== */
         .product-list {
             display: flex;
             flex-direction: column;
@@ -186,7 +276,6 @@
             margin-bottom: 60px;
         }
 
-        /* Kontainer Utama Kartu Produk */
         .product-card-horizontal {
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
@@ -201,14 +290,12 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
         }
 
-        /* Tata Letak Utama (Gambar + Ringkasan Detail) */
         .product-main-row {
             display: flex;
             flex-direction: row;
             cursor: pointer;
         }
 
-        /* Gambar Kiri */
         .product-image-container {
             width: 320px;
             height: 230px;
@@ -222,7 +309,6 @@
             object-fit: cover;
         }
 
-        /* Detail Ringkas Kanan */
         .product-details {
             padding: 25px 30px;
             display: flex;
@@ -262,26 +348,8 @@
             top: -2px;
         }
 
-        /* Indikator Klik / Toggle */
-        .expand-toggle-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            color: #2563eb;
-            font-weight: 600;
-            margin-top: 5px;
-            user-select: none;
-        }
-
-        .expand-toggle-btn .arrow-icon {
-            transition: transform 0.3s ease;
-            display: inline-block;
-        }
-
-        /* KONTEN EXPANDABLE (YANG MUNCUL DI BAWAHNYA) */
         .product-expanded-content {
-            display: none; /* Tersembunyi secara default */
+            display: none;
             padding: 25px 30px 30px 30px;
             background-color: #f8fafc;
             border-top: 1px solid #e2e8f0;
@@ -434,16 +502,53 @@
 
     <main class="main-container">
         
-        <!-- ABOUT US SECTION -->
-        <section id="about" class="about-section">
-            <div class="about-container">
-                <h2>About Ainoor Trading</h2>
-                <p>
-                    Ainoor Trading is a Makassar-based Indonesian enterprise specialized exclusively in the processing and supply chain management of <strong>Eucheuma Cottonii commodities</strong>. Operating directly at the coastal sourcing hub of South Sulawesi, we apply rigorous processing standards to transform raw seaweed into high-value export-grade commodities.
-                </p>
-                <p>
-                    From specialized raw material preparation for carrageenan industries to refined organic extracts and industrial sea salt, our focus is delivering standardized Cottonii-derived products that meet global commercial specifications.
-                </p>
+        <!-- ABOUT US SECTION (ACCORDION MODAL/EXPANDABLE) -->
+        <section id="about">
+            <div class="about-accordion-card">
+                <div class="about-main-row" onclick="toggleDetails('about-details', 'arrow-about')">
+                    <div class="about-summary-text">
+                        <h2>About Ainoor Trading</h2>
+                        <p>Learn more about our company profile, leadership, and marine commodity sourcing.</p>
+                    </div>
+                    <div class="expand-toggle-btn">
+                        <span>Read Company Overview</span>
+                        <span id="arrow-about" class="arrow-icon">▼</span>
+                    </div>
+                </div>
+
+                <!-- DETAIL ABOUT US YANG MUNCUL DI BAWAHNYA -->
+                <div id="about-details" class="about-expanded-content">
+                    <div class="founder-profile-grid">
+                        <div class="founder-photo-box">
+                            <img src="founder-ainoor.jpeg" alt="Founder of Ainoor Trading">
+                            <caption>Management & Sourcing Lead</caption>
+                        </div>
+                        <div class="about-detailed-text">
+                            <p>
+                                <strong>Ainoor Trading</strong> is a specialized export-oriented entity headquartered in Makassar, South Sulawesi. Operating directly at the heart of Indonesia's primary seaweed production hub, we bridge coastal farming cooperatives with international buyers demanding high-specification marine raw materials.
+                            </p>
+                            <p>
+                                Under focused leadership, our business model prioritizes clean solar-drying processing, standardized moisture control, and direct supply chain traceability to ensure carrageenan extraction factories receive consistent quality in every shipment.
+                            </p>
+
+                            <!-- PILLARS -->
+                            <div class="about-pillars-grid">
+                                <div class="pillar-item">
+                                    <h4>Direct Sourcing</h4>
+                                    <p>Procured directly from South Sulawesi's coastal coastal farmers.</p>
+                                </div>
+                                <div class="pillar-item">
+                                    <h4>Quality Control</h4>
+                                    <p>Strict moisture (32-35%) and impurity screening before baling.</p>
+                                </div>
+                                <div class="pillar-item">
+                                    <h4>Logistics Hub</h4>
+                                    <p>Direct FCL shipping via Port of Makassar (IDUPG).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -473,7 +578,6 @@
                         </div>
                     </div>
 
-                    <!-- DETAIL YANG MUNCUL DI BAWAHNYA -->
                     <div id="details-p1" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
@@ -521,7 +625,6 @@
                         </div>
                     </div>
 
-                    <!-- DETAIL YANG MUNCUL DI BAWAHNYA -->
                     <div id="details-p2" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
@@ -569,7 +672,6 @@
                         </div>
                     </div>
 
-                    <!-- DETAIL YANG MUNCUL DI BAWAHNYA -->
                     <div id="details-p3" class="product-expanded-content">
                         <div class="expanded-grid">
                             <div class="spec-box">
